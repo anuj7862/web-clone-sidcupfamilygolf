@@ -1,0 +1,769 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+
+html, body {
+    width: 100%;
+    height: 100%;
+    /* perspective: 400px; */
+}
+
+a {
+    text-decoration: unset;
+}
+
+::selection {
+    color: #B3E824;
+    background-color: rgba(177, 173, 173, 0.637);
+}
+
+  
+/* --------------------- CURSOR START --------------------------- */
+#cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #b1d550;
+    z-index: 100;
+    position: fixed;
+    pointer-events: none;
+    transition: width 1s linear, height 1s linear, background-color 1s linear;
+}
+#cursorBlur {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: #a4c8407b;
+    filter: blur(80px);
+    z-index: -1;
+    position: fixed;
+    transition: transform 2s ease;
+    pointer-events: none;
+}
+
+/* --------------------- NAV START --------------------------- */
+.nav {
+    /* background-color: tomato; */
+    display: flex;
+    padding: .6rem 1rem;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    position: fixed;
+    z-index:  2;
+    width: 100%;
+    height: 120px;
+}
+
+.nav img {
+    height: 4.2rem;
+}
+
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav ul li {
+    font-weight: lighter;
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.nav ul li:hover {
+    color: #95c11e;
+}
+.nav .book-buttons {
+    display: flex;
+    margin-left: 4.3rem;
+    gap: .4rem;
+}
+
+.nav .book-buttons .book-button {
+    border: 3px solid #95c11e;
+    padding: .85rem 2.2rem;
+    border-radius: 4rem;
+    font-size: .9rem;
+    background-color: black;
+}
+
+.nav .book-buttons .book-button:hover {
+    background-color: #95c11e;
+    color: black;
+    transition: all 1.5s ease-in;
+}
+
+/* --------------------- VIDEO START --------------------------- */
+video {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -10;
+}
+.blackbackground {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: -2;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+/* --------------------- MAIN START --------------------------- */
+.main {
+    position: relative;
+    /* background-color: rgba(0, 0, 0, .4); */
+    /* z-index: -2; */
+    /* display: flex;
+    flex-direction: column; */
+}
+
+/* --------------------- PAGE 1 START --------------------------- */
+ .main .page1 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.page1 h1{
+    font-size: 5.9rem;
+    font-weight:900;
+    position: relative;
+}
+
+.page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    left: -4px;
+    top: -5px;
+    color: black;
+    -webkit-text-stroke: 1px #95c11e;
+    z-index: -1;
+}
+.page1 h2 {
+    /* margin-top: 1rem; */
+    margin-bottom: 1.5rem;
+}
+
+.page1 p {
+    width: 40%;
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+/* --------------------- PAGE 2 START --------------------------- */
+.main .page2 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.page2 .menu {
+    white-space: nowrap;
+    background-color: transparent;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.infiniteMenu {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: menuLoop;
+    animation-duration: 35s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    text-align: center;
+}
+.menu::-webkit-scrollbar{
+    display: none;
+}
+
+.infiniteMenu h4 {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 6rem;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    -webkit-text-stroke: 1px #fff;
+    transition: all 1s linear;
+}
+
+.infiniteMenu h4:hover {
+    color: #95c11e;
+    -webkit-text-stroke: 1px #95c11e;
+}
+
+/*----------------------------about us------------------------------*/
+.page2 .about {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 4.5rem;
+    text-align: center;
+}
+
+.about h3 {
+    font-size: 2.3rem;
+    font-weight: 900;
+}
+
+.about .aboutContent {
+    display: flex;
+}
+
+.aboutContent img{
+    margin-top: 2rem;
+    border-radius: 5%;
+}
+
+.aboutContent .img1 {
+    width: 16%;
+    scale: .75;
+}
+
+.aboutContent .img2 {
+    width: 11%;
+    margin-right: 2.5rem;
+}
+
+.aboutContent .aboutPara {
+    margin: .9rem 4.3rem;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.aboutPara p {
+    margin: 2rem 1rem;
+}
+
+/*----------------------------imgage cards------------------------------*/
+
+.page2 .cards {
+    height: 65vh;
+    margin: 0 6rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    /* background-color: turquoise; */
+    perspective: 400px;
+}
+
+.cards img {
+    position: absolute;
+    top: -40px;
+    left: 5px;
+}
+
+.cards .card {
+    background-color: #ffffff;
+    height: 85%;
+    width: 28.5%;
+    border-radius: 5%;
+    z-index: 10;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    transition: all .4s ease-in;
+    overflow: hidden;
+}
+
+.card .cardHeading {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    transition: all .4s ease-in;
+    opacity: 1;
+    /* display: none; */
+}
+
+.card .overcontent {
+    background-color: #acd640;
+    width: 100%;
+    height: 100%;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-radius: 5%;
+    opacity: 0;
+    transition: all .4s ease-in;
+}
+
+.overcontent h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-left: 0;
+    margin-bottom: 1rem;
+    color: black;
+    display: unset;
+}
+
+.overcontent p{
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 1.4rem;
+    color: black;
+}
+
+#card1 {
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1");
+}
+#card2 {
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C1024&ssl=1");   
+}
+#card3 {
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1");   
+}
+
+.card:hover .overcontent {
+    opacity: 1;
+}
+
+.card:hover .cardHeading {
+    opacity: 0;
+    display: none;
+}
+
+/*----------------------------signup title------------------------------*/
+
+.page2 .signupTitle {
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(to right top, #B3E824 , #039c3d);
+    text-align: center;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 10vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.signupTitle .img1 {
+    position: relative;
+    left: -100px;
+}
+
+.signupTitle .img2 {
+    position: relative;
+    right: -98px;
+}
+
+.signupTitle .content h3 {
+    color: black;
+    font-weight: 900;
+}
+
+
+/*----------------------------coffee shop------------------------------*/
+.coffee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    position: relative;
+}
+
+.coffee .backImage {
+    position: absolute;
+    top: 46vh;
+    left: 120px;
+    z-index: -1;
+}
+
+.coffee .imageSlider {
+    width: 45%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imageSlider img {
+    border-radius: 2%;
+    background-position:center;
+    background-size: cover;
+    transition: all .5s ease-in;
+}
+
+.imageSlider .imageDots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.imageDots .imageDot {
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    margin: 3rem .4rem;
+    border-radius: 50%;
+    position: relative;
+    transition: all .5s ease-in;
+}
+
+#imageDot1 {
+    background-color: #b1d550;
+    /* width: 15px;
+    height: 15px; */
+}
+
+.imageDots .overlayCircle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 100px;
+    top: -7.5px;
+    left: -7.5px;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #b1d550;
+    transition: all .5s ease-in;
+    z-index: -1;
+}
+
+.coffee .container {
+    width:  34%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container h3 {
+    font-size: 2.3rem;
+    font-weight: 900;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.container p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 2;
+    margin-bottom: 2rem;
+}
+
+.container .coffeeBtn {
+    border: 3px solid #95c11e;
+    padding: .85rem 2.2rem;
+    border-radius: 4rem;
+    font-size: .8rem;
+    background-color: black;
+    text-transform: uppercase;
+    width: 38%;
+    text-align: center;
+}
+
+.container .coffeeBtn:hover {
+    background-color: #95c11e;
+    color: black;
+    transition: all 1.5s ease-in;
+}
+
+/*----------------------------------------------video slider-----------------------------------------*/
+
+.videos {
+    margin-top: 13rem;
+    margin-bottom: 10rem;
+    transform: rotate(-3deg);
+}
+.videos .videoSlider {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.videoSlider::-webkit-scrollbar{
+    display: none;
+}
+
+.videoSlider .infiniteVideo {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: menuLoop;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    position: relative;
+    
+}
+
+.infiniteVideo .videoLink {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0 1rem;
+}
+
+.videoLink img {
+    border-radius: 3%;
+}
+
+.videos .instaLink {
+    text-align: end;
+    margin: 2rem 6rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.instaLink a:hover {
+    color:#b1d550;
+    transition: all .5s linear;
+}
+
+
+.instaLink .instaLogo {
+    margin-right: 1rem;
+}
+
+.instaLink a:hover .instaLogo{
+    color:#b1d550;
+    transition: all .5s linear;
+}
+
+/* --------------------------------------------------quotes-------------------------------------------- */
+
+.quotes {
+    margin: 6rem 8rem;
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#quotesSvg1 {
+    position:absolute;
+    top: 10px;
+    left: 10px;
+    /* transition: all .5s linear; */
+}
+#quotesSvg2 {
+    position:absolute;
+    bottom: 10px;
+    right: 10px;
+    /* transition: all .5s linear; */
+}
+
+.quotes .quote {
+    width: 75%;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-align: center;
+    transition: all .5s ease-in;
+}
+
+.lastMenuCards{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6rem 4rem;
+}
+
+.lastMenuCards .backText {
+    /* top: -50px; */
+    position:absolute;
+    font-size: 5.4rem;
+    font-weight: 900;
+    color: #000;
+    -webkit-text-stroke: 1px #fff;
+    font-family: 'Roboto', sans-serif;
+    z-index: -1;
+}
+
+.lastMenuCards .menuCards {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menuCards .menuCard {
+    background-color: #B3E824;
+    color: black;
+    width: 32%;
+    height: 18vh;
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all .25s linear;
+}
+
+.menuCard:hover{
+    color: #fff;
+}
+
+#menuCard1:hover {
+    background-image:url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-toptracer.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C683&ssl=1");
+    background-position: center;
+    background-size: cover;
+}
+#menuCard2:hover {
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-lessons.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C683&ssl=1");
+    background-position: center;
+    background-size: cover;
+}
+#menuCard3:hover {
+    background-image: url("https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/page-ag.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1");
+    background-position: center;
+    background-size: cover;
+}
+
+/*-------------------------------------------footer start--------------------------- */
+
+.footer {
+    background: linear-gradient(to right top, #B3E824 , #039c3d);
+    height: 45vh;
+    padding-top: 5rem;
+    padding-right: 9rem;
+    position: relative;
+}
+
+.footerBackImage {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+}
+
+.footerInstaLogo {
+    position: absolute;
+    top: 250px;
+    left: 180px;
+
+}
+
+.footer i{
+    color: #000;
+}
+.footer i:hover {
+    color: #fff;
+}
+
+.footerFacebookLogo {
+    position: absolute;
+    top:250px;
+    left: 140px;
+    color: #000;
+}
+
+
+.footer .footerContent {
+    z-index: 1;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* margin-top: 4rem; */
+}
+
+.footerContent .footerLogo {
+    margin-left: 2rem;
+    z-index: 2;
+}
+
+.footerContent .footerMenu{
+    margin-left: 5rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+.footerH3 {
+    font-size: 1.43rem;
+    font-weight: 900;
+    line-height: 1.3;
+    color: black;
+    margin-bottom: .5rem;
+    transition: all .3s linear;
+}
+
+.footerH3:hover{
+    color: #fff;
+}
+
+.footerContent .footerAddress {
+    margin-top: 1rem;
+    margin-left: 5rem;
+}
+
+.footerContent .footerAddress p{
+    color: #000;
+    font-size: .95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: .2rem;
+}
+
+.phoneNo {
+    color: #000;
+    font-weight: 700;
+    transition: all .3s linear;
+}
+
+.phoneNo:hover {
+    color:#fff
+}
+
+.footer .lastPara {
+    position: absolute;
+    left: 140px;
+    bottom: 5px;
+    font-size: .9rem;
+}
+
+.lastPara p{
+    color: #000;
+}
+
+.lastPara a{
+    text-decoration: underline;
+    color: #000;
+    font-weight: 500;
+}
+
+.lastPara a:hover{
+    color: #fff;
+}
+
+@keyframes menuLoop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
